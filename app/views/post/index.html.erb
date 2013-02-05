@@ -1,4 +1,24 @@
-<%= form_tag(:controller => "post", :action => "create", :method => "post") do %>
-  <%= text_area_tag(:message, "", :placeholder => "Post body") %>
-  <%= submit_tag("Post") %>
-<% end %>
+<div class="post-form">
+	<%= form_tag(:controller => "post", :action => "create") do %>
+		<%= text_field_tag(:title) %>
+	  	<%= text_area_tag(:bodytext, "", :placeholder => "Post body") %>
+	  	<%= submit_tag("Post") %>
+	<% end %>
+</div>
+  	
+  	<% @posts.each do |p| %>
+  		<div class="post">
+  			<span class="title">
+  				<%= p.title %>
+  			</span>
+  			<span class="fulltext">
+  				<%= p.bodytext %>
+  			</span>
+  			<span class="ip">
+  				<%= p.ip %>
+  			</span>
+  			<span class="ip">
+  				<%= p.created_at %>
+  			</span>
+  		</div>
+  	<% end %>
