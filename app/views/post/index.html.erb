@@ -20,7 +20,7 @@
 	  				<legend><span class="tinyt"><%= post.title %></span><span class="gray smallt right"><%= post.created_at %></span></legend>
 	  			</span>
 	  			<span class="fulltext">
-	  				<%= render_markdown(post.bodytext) %>
+	  				<%= markdown(post.bodytext) %>
 	  			</span>
 	  			<span class="ip">
 	  				
