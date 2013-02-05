@@ -1,4 +1,5 @@
 RailsPublicBlog::Application.routes.draw do
+  root :to => 'Blog#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
