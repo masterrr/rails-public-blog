@@ -1,5 +1,5 @@
 module PostHelper
 def render_markdown (str)
-	return Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true).render(str).html_safe
+	text = Redcarpet::Markdown.new(MdEmoji::Render, autolink: true).render(str).html_safe
 end
 end
