@@ -3,8 +3,7 @@ class PostController < ApplicationController
 		@posts = Post.order('created_at DESC').limit(15)
 	end
 	def create
-		current_local_ip = request.env['REMOTE_ADDR']
-		Post.new(:title => params[:title], :bodytext => params[:bodytext], :ip => current_local_ip).save;
+		Post.new(:title => params[:title], :bodytext => params[:bodytext], :ip => request.ip).save;
 		redirect_to(:back)
 	end
 
