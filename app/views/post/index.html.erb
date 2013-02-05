@@ -14,19 +14,19 @@
 <div class="span7 offset1">
 	<div class="post-list">
 	<legend>Posts list</legend>
-	  	<% @posts.each do |p| %>
+	  	<% @posts.each do |post| %>
 	  		<div class="post">
 	  			<span class="title">
-	  				<%= p.title %>
+	  				<legend><%= post.title %></legend>
 	  			</span>
 	  			<span class="fulltext">
-	  				<%= p.bodytext %>
+	  				<%= post.bodytext %>
 	  			</span>
 	  			<span class="ip">
-	  				<%= p.ip %>
+	  				<%= post.ip %>
 	  			</span>
 	  			<span class="ip">
-	  				<%= p.created_at %>
+	  				<%= post.created_at %>
 	  			</span>
 	  		</div>
 	  	<% end %>
