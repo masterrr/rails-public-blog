@@ -1,34 +1,16 @@
 <div class="span4">
 	<div class="post-form">
-		<%= form_tag(:controller => "post", :action => "create") do %>
+		<%= form_tag({:controller => "post", :action => "create"}, { remote: true, :id => "submit-form" } ) do %>
 			<legend>New Post</legend>
 			<label>Post title <span class="gray tinyt">(max. 30 symbols)</span></label>
 			<%= text_field_tag(:title, "", :placeholder => "Title") %>
 			<label>Post text <span class="gray tinyt">(max. 500 symbols)</span></label>
 		  	<%= text_area_tag(:bodytext, "", :placeholder => "Body") %>
 		  	<br>
-		  	<%= submit_tag "Post", :class => 'btn btn-primary btn-large' %>
+		  	<%= submit_tag "Post", :class => 'btn btn-primary btn-large submit-button' %>
 		<% end %>
 	</div>
 </div>
 <div class="span7 offset1">
-	<div class="post-list">
-	<legend><strong>Posts list</strong></legend>
-	  	<% @posts.each do |post| %>
-	  		<div class="post">
-	  			<span class="title">
-	  				<legend><span class="tinyt"><%= post.title %></span><span class="gray smallt right"><%= post.created_at %></span></legend>
-	  			</span>
-	  			<span class="fulltext">
-	  				<%= markdown(post.bodytext) %>
-	  			</span>
-	  			<span class="ip">
-	  				
-	  			</span>
-	  			<span class="ip">
-	  				
-	  			</span>
-	  		</div>
-	  	<% end %>
-	 </div>
+	<%= render "postlist" %>
 </div>

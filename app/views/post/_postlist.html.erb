@@ -1,0 +1,13 @@
+<div class="post-list">
+	<legend><strong>Posts list</strong></legend>
+	  	<% @posts.each do |post| %>
+	  		<div class="post">
+	  			<span class="title">
+	  				<legend><span class="tinyt"><%= post.title %></span><span class="gray smallt right"><%= post.created_at %></span></legend>
+	  			</span>
+	  			<span class="fulltext">
+	  				<%= markdown(post.bodytext) %>
+	  			</span>
+	  		</div>
+	  	<% end %>
+ </div>

@@ -13,3 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(document).ready(function() {
+  reload = function() { $('.post-list').load('/get_posts'); };
+    $("#submit-form")
+    .bind("ajax:complete", reload)
+    .bind("ajax:success", reload);
+});
