@@ -2,7 +2,17 @@
 <html>
 <head>
   <title>Rails Public Blog</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+ <script src="http://js.pusher.com/1.12/pusher.min.js"></script>
+  <script type="text/javascript">
+    var pusher = new Pusher('<%= Pusher.key %>');
+    var channel = pusher.subscribe('posts');
+    channel.bind('newpost', function(data) {
+      console.log('pusher');
+      $('.post-list').load('/');
+    });
+  </script>
+
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
