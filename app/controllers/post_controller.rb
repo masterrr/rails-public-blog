@@ -9,13 +9,9 @@ class PostController < ApplicationController
   end
 
   def create
-    if request.xhr?
       Post.create(title: params[:title], bodytext: params[:bodytext], ip: request.ip)
-      Pusher['posts'].trigger('newpost', message: 'pusher' )
-      render nothing: true
-    else
-      redirect_to :back
-    end
+      Pusher['posts'].trigger('newpost', message: 'pusher')
+      request.xhr? ? render(nothing: true) : redirect(root_path)
   end
 
 end
