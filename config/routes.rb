@@ -1,7 +1,6 @@
 RailsPublicBlog::Application.routes.draw do
   root :to => 'post#index'
   resources :post
-  match '/get_posts' => 'post#get_posts'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

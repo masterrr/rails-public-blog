@@ -15,7 +15,7 @@
 //= require_tree .
 
 $(document).ready(function() {
-  reload = function() { $('.post-list').load('/get_posts'); };
+  reload = function() { $('.post-list').load('/'); };
     $("#submit-form")
     .bind("ajax:complete", reload)
     .bind("ajax:success", reload);
