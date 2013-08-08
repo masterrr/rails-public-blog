@@ -1,7 +1,7 @@
 # Blog implementation in Rails
 
 
-## Try out on [http://rails-public-blog.herokuapp.com/](http://en.wikipedia.com/wiki/Markdown)
+## Try out on [http://rails-public-blog.herokuapp.com/](http://rails-public-blog.herokuapp.com/)
 
 Tehnologies:
 
